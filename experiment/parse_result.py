@@ -60,7 +60,8 @@ def parse_num():
             cur_item.prod1_num = recorded_test_num
         elif "prod2" in line:
             cur_item.prod2_num = recorded_test_num
-    
+
+
 def write_to_file():
     csv_file = open('result.csv', 'a', newline='')
     writer = csv.writer(csv_file)
@@ -77,4 +78,3 @@ if __name__ == '__main__':
     parse_num()
     write_to_file()
     os.chdir(cur_path)
-    

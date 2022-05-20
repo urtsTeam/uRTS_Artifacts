@@ -1,16 +1,16 @@
 #!/bin/bash
 
 function usage() {
-    echo 'Usage: ./run.sh [mode] [project]'
-    echo '[mode]: (1) urts (2) retestall'
-    echo '[project]: (1) hcommon (2) hbase (3) hdfs (4) alluxio (5) zookeeper'
+    echo 'Usage: ./run.sh <mode> <project>'
+    echo 'mode: urts | retestall'
+    echo 'project: hcommon | hbase | hdfs | alluxio | zookeeper'
     exit 1
 }
 
 function runExperiment() {
     if [ $project = "hcommon" ] || [ $project = "hbase" ] || [ $project = "hdfs" ] || [ $project = "alluxio" ] || [ $project = "zookeeper" ]
     then
-        cd $mode/$project/
+        cd $mode/$project
         echo '============== Start Running '$mode' '$project' =============='
         python3 run.py
         cd ../..
